@@ -22,7 +22,11 @@ const app = express();
 // ── Middleware ───────────────────────────────────────────────
 app.use(
   cors({
-    origin: ["http://localhost:5173", "http://localhost:5174"],
+    origin: [
+      "http://localhost:5173",
+      "http://localhost:5174",
+      "https://todo-app1-ruby.vercel.app",
+    ],
     credentials: true,
   })
 );
