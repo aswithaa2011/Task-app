@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
-import SiteNavbar from "../components/site/SiteNavbar";
-import SiteFooter from "../components/site/SiteFooter";
+import SiteNavbar from "../Components/site/SiteNavbar";
+import SiteFooter from "../Components/site/SiteFooter";
 
 export default function RootLayout() {
   return (

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import SummaryCard from "../components/dashboard/SummaryCard";
-import DayCard from "../components/dashboard/DayCard";
-import CreateTaskModal from "../components/dashboard/CreateTaskModal";
+import SummaryCard from "../Components/dashboard/SummaryCard";
+import DayCard from "../Components/dashboard/DayCard";
+import CreateTaskModal from "../Components/dashboard/CreateTaskModal";
 
 export default function HomePage() {
   const [tasks, setTasks] = useState([]);
