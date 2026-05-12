@@ -15,7 +15,7 @@ export default function DayPage() {
 
   const fetchTask = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/tasks");
+      const res = await fetch("https://task-app-1-7kx8.onrender.com/api/tasks");
       const data = await res.json();
       if (data.success) {
         const foundTask = data.tasks.find(t => t._id === id);
@@ -31,7 +31,7 @@ export default function DayPage() {
   const updateStatus = async (newStatus) => {
     setUpdating(true);
     try {
-      const res = await fetch(`http://localhost:5000/api/tasks/${id}`, {
+      const res = await fetch(`https://task-app-1-7kx8.onrender.com/api/tasks/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: newStatus })
@@ -51,7 +51,7 @@ export default function DayPage() {
     if (!window.confirm("Are you sure you want to delete this workspace? This will only remove it from the dashboard, not from your disk.")) return;
     
     try {
-      const res = await fetch(`http://localhost:5000/api/tasks/${id}`, {
+      const res = await fetch(`https://task-app-1-7kx8.onrender.com/api/tasks/${id}`, {
         method: 'DELETE'
       });
       const data = await res.json();

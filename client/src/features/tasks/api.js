@@ -1,12 +1,12 @@
 export async function fetchTasks() {
-  const res = await fetch('http://localhost:5000/api/tasks');
+  const res = await fetch('https://task-app-1-7kx8.onrender.com/api/tasks');
   const data = await res.json();
   if (!data.success) throw new Error('Failed to fetch tasks');
   return data.tasks;
 }
 
 export async function createTask(task) {
-  const res = await fetch('http://localhost:5000/api/tasks', {
+  const res = await fetch('https://task-app-1-7kx8.onrender.com/api/tasks', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(task),
@@ -17,7 +17,7 @@ export async function createTask(task) {
 }
 
 export async function updateTask(id, updates) {
-  const res = await fetch(`http://localhost:5000/api/tasks/${id}`, {
+  const res = await fetch(`https://task-app-1-7kx8.onrender.com/api/tasks/${id}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(updates),
@@ -28,7 +28,7 @@ export async function updateTask(id, updates) {
 }
 
 export async function deleteTask(id) {
-  const res = await fetch(`http://localhost:5000/api/tasks/${id}`, {
+  const res = await fetch(`https://task-app-1-7kx8.onrender.com/api/tasks/${id}`, {
     method: 'DELETE',
   });
   const data = await res.json();

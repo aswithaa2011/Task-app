@@ -14,7 +14,7 @@ export default function HomePage() {
 
   const fetchTasks = async () => {
     try {
-      const res = await fetch("http://localhost:5000/api/tasks");
+      const res = await fetch("https://task-app-1-7kx8.onrender.com/api/tasks");
       const data = await res.json();
       if (data.success) {
         setTasks(data.tasks);

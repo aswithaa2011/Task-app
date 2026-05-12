@@ -16,7 +16,7 @@ export default function CreateTaskModal({ isOpen, onClose, onCreated }) {
     setError(null);
     
     try {
-      const res = await fetch('http://localhost:5000/api/tasks', {
+      const res = await fetch('https://task-app-1-7kx8.onrender.com/api/tasks', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, status: 'todo' })

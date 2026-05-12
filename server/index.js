@@ -40,6 +40,17 @@ app.get("/api/health", (req, res) =>
   res.json({ success: true, message: "mytask-webapp API is running 🚀" })
 );
 
+// ── Public User Tasks (for viewing in Chrome) ─────────────────
+import TaskV2 from "./model/TaskModelV2.js";
+app.get("/api/users/:userId/tasks", async (req, res) => {
+  try {
+    const tasks = await TaskV2.find({ owner: req.params.userId }).sort({ createdAt: -1 });
+    res.json({ success: true, count: tasks.length, tasks });
+  } catch (error) {
+    res.status(500).json({ success: false, error: "Server error" });
+  }
+});
+
 // ── Global error handler ─────────────────────────────────────
 app.use(errorHandler);
 
